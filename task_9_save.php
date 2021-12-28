@@ -11,4 +11,6 @@ $text = $_POST['text'];
 $sql = "INSERT INTO `task_9` (`id`, `text`) VALUE (NULL, '$text')";
 mysqli_query($connect, $sql);
 
+
+mysqli_close($connect);
 header('Location: task_9.html');
