@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,11 +35,13 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
+                                    <? if(isset($_SESSION['count_click_button'])) :?>
                                     <div class="alert alert-info fade show" role="alert">
-                                        Кнопка была нажата: <b>0</b> раз
+                                        Кнопка была нажата: <b><? echo $_SESSION['count_click_button']; ?></b> раз
                                     </div>
-                                    <form action="">
-                                        <button class="btn btn-success mt-3">Submit</button>
+                                    <? endif; ?>
+                                    <form action="" method="post">
+                                        <button class="btn btn-success mt-3" type="submit">Submit</button>
                                     </form>
                                 </div>
                             </div>
