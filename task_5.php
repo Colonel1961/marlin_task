@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <?
-                        $array_people = [
+                        $array = [
                                 [
                                     'img' => 'img/demo/authors/sunny.png',
                                     'alt_image' => 'Sunny A.',
@@ -78,19 +78,19 @@
                         <div class="panel-content">
                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
                                <?
-                               foreach ($array_people as $person):
+                               foreach ($array as $row):
                                ?>
                                    <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                       <img src="<? echo $person['img']; ?>" alt="<? echo $person['alt_image']; ?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
+                                       <img src="<? echo $row['img']; ?>" alt="<? echo $row['alt_image']; ?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                        <div class="ml-2 mr-3">
                                            <h5 class="m-0">
-                                               <? echo $person['name']; ?>
+                                               <? echo $row['name']; ?>
                                                <small class="m-0 fw-300">
-                                                   <? echo $person['job']; ?>
+                                                   <? echo $row['job']; ?>
                                                </small>
                                            </h5>
-                                           <a href="<? echo $person['twitter_link_href']; ?>" class="text-info fs-sm" target="_blank"><? echo $person['twitter_link_text'];?></a> -
-                                           <a href="<? echo $person['email']; ?>" class="text-info fs-sm" target="_blank" title="<? echo $person['email_title'];?>"><i class="fal fa-envelope"></i></a>
+                                           <a href="<? echo $row['twitter_link_href']; ?>" class="text-info fs-sm" target="_blank"><? echo $row['twitter_link_text'];?></a> -
+                                           <a href="<? echo $row['email']; ?>" class="text-info fs-sm" target="_blank" title="<? echo $row['email_title'];?>"><i class="fal fa-envelope"></i></a>
                                        </div>
                                    </div>
                                <? endforeach; ?>
