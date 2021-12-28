@@ -35,12 +35,18 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <? if(isset($_SESSION['count_click_button'])) :?>
                                     <div class="alert alert-info fade show" role="alert">
-                                        Кнопка была нажата: <b><? echo $_SESSION['count_click_button']; ?></b> раз
+                                        Кнопка была нажата: <b>
+                                            <?
+                                                if(isset($_SESSION['count_click_button'])){
+                                                    echo $_SESSION['count_click_button'];
+                                                }else{
+                                                    echo '0';
+                                                }
+                                            ?>
+                                        </b> раз
                                     </div>
-                                    <? endif; ?>
-                                    <form action="" method="post">
+                                    <form action="task_13_handler.php" method="post">
                                         <button class="btn btn-success mt-3" type="submit">Submit</button>
                                     </form>
                                 </div>
