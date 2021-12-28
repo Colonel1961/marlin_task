@@ -27,14 +27,57 @@
                         </h2>
 
                         <?
+                        $array_people = [
+                            [
+                                'img' => 'img/demo/authors/sunny.png',
+                                'alt_image' => 'Sunny A.',
+                                'name' => 'Sunny A. (UI/UX Expert)',
+                                'job' => 'Lead Author',
+                                'twitter_link_href' => 'https://twitter.com/@myplaneticket',
+                                'twitter_link_text' => '@myplaneticket',
+                                'email' => 'https://wrapbootstrap.com/user/myorange',
+                                'email_title' => 'Contact Sunny',
+                                'status' => 'active'
+                            ],
+                            [
+                                'img' => 'img/demo/authors/josh.png',
+                                'alt_image' => 'Jos K.',
+                                'name' => 'Jos K. (ASP.NET Developer)',
+                                'job' => 'Partner &amp; Contributor',
+                                'twitter_link_href' => 'https://twitter.com/@atlantez',
+                                'twitter_link_text' => '@atlantez',
+                                'email' => 'https://wrapbootstrap.com/user/Walapa',
+                                'email_title' => 'Contact Jos',
+                                'status' => 'active'
+                            ],
+                            [
+                                'img' => 'img/demo/authors/jovanni.png',
+                                'alt_image' => 'Jovanni Lo',
+                                'name' => 'Jovanni L. (PHP Developer)',
+                                'job' => 'Partner &amp; Contributor',
+                                'twitter_link_href' => 'https://twitter.com/@lodev09',
+                                'twitter_link_text' => '@lodev09',
+                                'email' => 'https://wrapbootstrap.com/user/lodev09',
+                                'email_title' => 'Contact Jovanni',
+                                'status' => 'banned'
+                            ],
+                            [
+                                'img' => 'img/demo/authors/roberto.png',
+                                'alt_image' => 'Jovanni Lo',
+                                'name' => 'Roberto R. (Rails Developer)',
+                                'job' => 'Partner &amp; Contributor',
+                                'twitter_link_href' => 'https://twitter.com/@sildur',
+                                'twitter_link_text' => '@sildur',
+                                'email' => 'https://wrapbootstrap.com/user/sildur',
+                                'email_title' => 'Contact Roberto',
+                                'status' => 'banned'
+                            ]
+                        ];
 
-                        $connect = mysqli_connect('localhost', 'colonel', 'Dk3SFds1961$', 'marlin_course');
-                        if (!$connect) {
-                            die('Error connect to DataBase');
-                        }
-                        
-                        $sql = "SELECT * FROM people";
-                        $result = mysqli_query($connect, $sql);
+                        $connect = mysqli_connect("localhost", "colonel", "Dk3SFds1961$", "marlin_course");
+                        $sql = "SELECT FROM * people";
+                        $person = mysqli_query($connect, $sql);
+                        var_dump($person);
                         ?>
 
                         <div class="panel-toolbar">
@@ -45,7 +88,7 @@
                     <div class="panel-container show">
                         <div class="panel-content">
                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
-                               <?foreach ($result as $person) : ?>
+                               <?foreach ($array_people as $person) : ?>
                                <div class="<? echo $person['status'] == 'banned' ? 'banned' : '' ?> rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
                                    <img src="<? echo $person['img'];?>" alt="<? echo $person['alt_image']; ?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                    <div class="ml-2 mr-3">
