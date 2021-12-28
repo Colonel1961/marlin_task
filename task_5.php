@@ -84,7 +84,7 @@
                                        <img src="<? echo $person['img']; ?>" alt="<? echo $person['alt_image']; ?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                        <div class="ml-2 mr-3">
                                            <h5 class="m-0">
-                                               <? echo $person['name'];?>
+                                               <? echo $person['name']; ?>
                                                <small class="m-0 fw-300">
                                                    <? echo $person['job']; ?>
                                                </small>
